@@ -1,25 +1,115 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ccu-Ck-yMI">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <development version="6000" identifier="xcode"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Home" id="BYZ-38-t0r" customClass="ViewController" customModule="singhasurvey" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="View">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="9hO-P5-Axs"/>
+                    <connections>
+                        <segue destination="g54-q0-e1k" kind="presentation" identifier="Login" id="hd4-Oa-HEj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1067" y="-763"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="FqC-1r-wvn">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ccu-Ck-yMI" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wxQ-Zs-qyr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="8xh-o4-gq7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HhB-eg-ZjO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="383" y="-763"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="PIy-zH-rq0">
+            <objects>
+                <viewController storyboardIdentifier="Login" id="g54-q0-e1k" customClass="LoginViewController" customModule="singhasurvey" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="z0C-rb-Ava"/>
+                        <viewControllerLayoutGuide type="bottom" id="vf5-Ay-TX0"/>
+                    </layoutGuides>
+                    <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFill" id="ni1-rk-pnJ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Dg-n1-TZ2">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ชื่อผู้ใช้งาน" textAlignment="center" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="k5x-x3-AKa">
+                                        <rect key="frame" x="173" y="285" width="253" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6S1-wB-awb">
+                                        <rect key="frame" x="264" y="423" width="72" height="30"/>
+                                        <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="10"/>
+                                        <state key="normal" title="กดลืมรหัสผ่าน">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="signinTapped:" destination="g54-q0-e1k" eventType="touchUpInside" id="GMV-Lk-Jz5"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WdC-zB-Qoq">
+                                        <rect key="frame" x="274" y="471" width="53" height="52"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" image="icon_next.png"/>
+                                    </button>
+                                    <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_launcher.png" translatesAutoresizingMaskIntoConstraints="NO" id="eZr-eV-IU5">
+                                        <rect key="frame" x="173" y="132" width="253" height="100"/>
+                                    </imageView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="รหัสผ่าน" textAlignment="center" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="6Rn-TJ-dTk">
+                                        <rect key="frame" x="173" y="339" width="253" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                </subviews>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1803921568627451" green="0.21568627450980393" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="3Dg-n1-TZ2" firstAttribute="centerX" secondItem="ni1-rk-pnJ" secondAttribute="centerX" id="RF4-DE-Ix7"/>
+                            <constraint firstItem="3Dg-n1-TZ2" firstAttribute="centerY" secondItem="ni1-rk-pnJ" secondAttribute="centerY" id="xQi-Sk-aIb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mPassword" destination="6Rn-TJ-dTk" id="gfC-2u-4Dy"/>
+                        <outlet property="mUsername" destination="k5x-x3-AKa" id="gcr-lg-yia"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oAh-84-qBc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1816" y="-763"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic_launcher.png" width="192" height="192"/>
+        <image name="icon_next.png" width="100" height="100"/>
+    </resources>
 </document>

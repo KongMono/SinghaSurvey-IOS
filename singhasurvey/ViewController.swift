@@ -12,7 +12,12 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        let isLoggedIn:Int = prefs.integerForKey("ISLOGGEDIN") as Int
+        if isLoggedIn != 1 {
+            self.performSegueWithIdentifier("Login", sender: self)
+        }
     }
 
     override func didReceiveMemoryWarning() {
