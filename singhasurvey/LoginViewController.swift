@@ -5,39 +5,55 @@
 //  Created by Kong Mono on 7/3/16.
 //  Copyright © 2016 Singha. All rights reserved.
 //
-
+import Alamofire
+import JHSpinner
 import UIKit
+import LMGeocoder
+import SwiftyJSON
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController,CLLocationManagerDelegate {
     
     @IBOutlet weak var mUsername:UITextField!
     @IBOutlet weak var mPassword:UITextField!
+    @IBOutlet weak var scrollview: UIScrollView!
+    
+    var locationManager:CLLocationManager!
+    var location_lat:Double = 0.0
+    var location_long:Double = 0.0
+    var mDataLogin = [[String:AnyObject]]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.hideKeyboardWhenTappedAround()
+        self.locationManager = CLLocationManager()
+        self.locationManager.delegate = self
+        self.locationManager.distanceFilter = 100.0
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        self.locationManager.requestAlwaysAuthorization()
+        self.locationManager.startUpdatingLocation()
+
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-
-    override func dismissKeyboard() {
-        view.endEditing(true)
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.first {
+            print(location.coordinate.latitude)
+            print(location.coordinate.longitude)
+            
+            location_lat = location.coordinate.latitude
+            location_long = location.coordinate.longitude
+        }
     }
-    
-
-    
-    @IBAction func signinTapped(sender : UIButton) {
-        
+    @IBAction func loginTapped(sender: AnyObject) {
         
         let username = (self.mUsername.text)! as String
         let password = (self.mPassword.text)! as String
         
         if ( username.isEmpty || password.isEmpty || (username.isEmpty && password.isEmpty)) {
             
-            let alert = UIAlertController(title: "Sign in Failed!", message: "Please enter Username and Password", preferredStyle: UIAlertControllerStyle.Alert)
+            let alert = UIAlertController(title: "Singha Survey", message: "Please enter Username and Password", preferredStyle: UIAlertControllerStyle.Alert)
             
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
             
@@ -48,40 +64,105 @@ class LoginViewController: UIViewController {
         } else {
             let post = "username: \(username), password: \(password)" as String
             NSLog("data: %@",post)
+        
+            callLogin(username ,password: password)
+        
+        }
+
+    }
+    
+    @IBAction func forgetPasswordTapped(sender: AnyObject) {
+        let alert = UIAlertController(title: "Singha Survey", message: "Enter Username.",
+                                      preferredStyle: UIAlertControllerStyle.Alert)
+        
+        let ok = UIAlertAction(title: "OK",style: UIAlertActionStyle.Default) {
+            (action: UIAlertAction) in
+                if let alertTextField = alert.textFields?.first where alertTextField.text != nil {
+                    self.callForgotPassword(alertTextField.text!)
+                }
+        }
+        
+        let cancel = UIAlertAction(title: "Cancel",
+                                   style: UIAlertActionStyle.Cancel,
+                                   handler: nil)
+        
+        alert.addTextFieldWithConfigurationHandler { (textField: UITextField) in
             
+            textField.placeholder = "Text here"
             
-            if username == "1234" && password == "1234" {
-                NSLog("Login SUCCESS");
+        }
+        
+        alert.addAction(ok)
+        alert.addAction(cancel)
+        
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func callForgotPassword(username: String){
+        let spinner = JHSpinnerView.showDeterminiteSpinnerOnView(self.view)
+        spinner.progress = 0.0
+        view.addSubview(spinner)
+        
+        let parameters = [
+            "username": username
+        ]
+        
+        Alamofire.request(.POST, API.forgot_service,parameters: parameters)
+            .responseJSON { response in
+            
+            let json = JSON(response.result.value!)
+            let alert = UIAlertController(title: "Singha Survey", message: json["msg"].stringValue, preferredStyle: UIAlertControllerStyle.Alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+            
+            self.presentViewController(alert, animated: true, completion: nil)
+            
+            spinner.dismiss()
                 
-                let prefs = NSUserDefaults.standardUserDefaults()
-                prefs.setObject(username, forKey: "USERNAME")
-                prefs.setInteger(1, forKey: "ISLOGGEDIN")
-                prefs.synchronize()
+        }
+        
+    }
+
+    func callLogin(username :String,password :String){
+        let spinner = JHSpinnerView.showDeterminiteSpinnerOnView(self.view)
+        spinner.progress = 0.0
+        view.addSubview(spinner)
+        
+        let parameters = [
+            "username": username,
+            "password": password,
+            "from": "IOS",
+            "lat": location_lat,
+            "long": location_long
+        ]
+
+        
+        Alamofire.request(.POST, API.login_service, parameters: parameters as? [String : AnyObject])
+            .responseJSON { response in
                 
-                self.dismissViewControllerAnimated(true, completion: nil)
+                var json = JSON(response.result.value!)
+                print(json)
+                if json["msg"] != nil {
+                    
+                    let alert = UIAlertController(title: "Singha Survey", message: json["msg"].stringValue, preferredStyle: UIAlertControllerStyle.Alert)
+                    
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+                    
+                    self.presentViewController(alert, animated: true, completion: nil)
+                    
+                    spinner.dismiss()
+                    
+                } else {
                 
-            } else {
+                    let defaults = NSUserDefaults.standardUserDefaults()
+                    defaults.setValue(json.rawString()!, forKey: "user_data")
+                    defaults.synchronize()
                 
-                let alert = UIAlertController(title: "Sign in Failed!", message: "wrong username and password", preferredStyle: UIAlertControllerStyle.Alert)
-                
-                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
-                
-                self.presentViewController(alert, animated: true, completion: nil)
-                
-            }
+                    spinner.dismiss()
+                    
+                    self.dismissViewControllerAnimated(true, completion: {})
+                    
+                }
         }
     }
-    
-}
-
-// Put this piece of code anywhere you like
-extension UIViewController {
-    func hideKeyboardWhenTappedAround() {
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
-        view.addGestureRecognizer(tap)
-    }
-    
-    func dismissKeyboard() {
-        view.endEditing(true)
-    }
-}
+  }

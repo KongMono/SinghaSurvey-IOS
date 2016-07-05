@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		130A4F5E1D2B58AB00D59D06 /* PasscodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130A4F5D1D2B58AB00D59D06 /* PasscodeViewController.swift */; };
+		130B02341D2AB91A003299DA /* icon_next_black.png in Resources */ = {isa = PBXBuildFile; fileRef = 130B02331D2AB91A003299DA /* icon_next_black.png */; };
+		130D108C1D29554800C3D789 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 130D108B1D29554800C3D789 /* Podfile */; };
+		130D108E1D295DAF00C3D789 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130D108D1D295DAF00C3D789 /* Config.swift */; };
+		130D10901D2A75DC00C3D789 /* SetupPasscodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130D108F1D2A75DC00C3D789 /* SetupPasscodeViewController.swift */; };
 		132C01271D28A7BB00152550 /* ic_launcher.png in Resources */ = {isa = PBXBuildFile; fileRef = 132C01261D28A7BB00152550 /* ic_launcher.png */; };
 		13F7AFC21D288C7B00AD91B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F7AFC11D288C7B00AD91B1 /* AppDelegate.swift */; };
 		13F7AFC41D288C7B00AD91B1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F7AFC31D288C7B00AD91B1 /* ViewController.swift */; };
@@ -15,9 +20,15 @@
 		13F7AFCC1D288C7B00AD91B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13F7AFCA1D288C7B00AD91B1 /* LaunchScreen.storyboard */; };
 		13F7AFD41D28922100AD91B1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F7AFD31D28922100AD91B1 /* LoginViewController.swift */; };
 		13F7AFD91D28A0C200AD91B1 /* icon_next.png in Resources */ = {isa = PBXBuildFile; fileRef = 13F7AFD81D28A0C200AD91B1 /* icon_next.png */; };
+		3E4C88AE506FB140BDC8C9E5 /* Pods_singhasurvey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 838CC9FAD284F089710CD0F6 /* Pods_singhasurvey.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		130A4F5D1D2B58AB00D59D06 /* PasscodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasscodeViewController.swift; sourceTree = "<group>"; };
+		130B02331D2AB91A003299DA /* icon_next_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_next_black.png; sourceTree = "<group>"; };
+		130D108B1D29554800C3D789 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		130D108D1D295DAF00C3D789 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		130D108F1D2A75DC00C3D789 /* SetupPasscodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupPasscodeViewController.swift; sourceTree = "<group>"; };
 		132C01261D28A7BB00152550 /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
 		13F7AFBE1D288C7B00AD91B1 /* singhasurvey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = singhasurvey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13F7AFC11D288C7B00AD91B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -28,6 +39,9 @@
 		13F7AFCD1D288C7B00AD91B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13F7AFD31D28922100AD91B1 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		13F7AFD81D28A0C200AD91B1 /* icon_next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_next.png; sourceTree = "<group>"; };
+		2AE6717D68AC643EDA49DE7C /* Pods-singhasurvey.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-singhasurvey.debug.xcconfig"; path = "Pods/Target Support Files/Pods-singhasurvey/Pods-singhasurvey.debug.xcconfig"; sourceTree = "<group>"; };
+		36FF4104DB875E1A6FF468F0 /* Pods-singhasurvey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-singhasurvey.release.xcconfig"; path = "Pods/Target Support Files/Pods-singhasurvey/Pods-singhasurvey.release.xcconfig"; sourceTree = "<group>"; };
+		838CC9FAD284F089710CD0F6 /* Pods_singhasurvey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_singhasurvey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E4C88AE506FB140BDC8C9E5 /* Pods_singhasurvey.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,8 +59,11 @@
 		13F7AFB51D288C7A00AD91B1 = {
 			isa = PBXGroup;
 			children = (
+				130D108B1D29554800C3D789 /* Podfile */,
 				13F7AFC01D288C7B00AD91B1 /* singhasurvey */,
 				13F7AFBF1D288C7B00AD91B1 /* Products */,
+				93F5F45E3CA40ED962E96066 /* Pods */,
+				BA339E0D305AF60A7726F178 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,9 +83,12 @@
 				13F7AFC31D288C7B00AD91B1 /* ViewController.swift */,
 				13F7AFC51D288C7B00AD91B1 /* Main.storyboard */,
 				13F7AFD31D28922100AD91B1 /* LoginViewController.swift */,
+				130D108F1D2A75DC00C3D789 /* SetupPasscodeViewController.swift */,
+				130A4F5D1D2B58AB00D59D06 /* PasscodeViewController.swift */,
 				13F7AFC81D288C7B00AD91B1 /* Assets.xcassets */,
 				13F7AFCA1D288C7B00AD91B1 /* LaunchScreen.storyboard */,
 				13F7AFCD1D288C7B00AD91B1 /* Info.plist */,
+				130D108D1D295DAF00C3D789 /* Config.swift */,
 			);
 			path = singhasurvey;
 			sourceTree = "<group>";
@@ -75,10 +96,28 @@
 		13F7AFD51D289CE500AD91B1 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				130B02331D2AB91A003299DA /* icon_next_black.png */,
 				132C01261D28A7BB00152550 /* ic_launcher.png */,
 				13F7AFD81D28A0C200AD91B1 /* icon_next.png */,
 			);
 			name = images;
+			sourceTree = "<group>";
+		};
+		93F5F45E3CA40ED962E96066 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2AE6717D68AC643EDA49DE7C /* Pods-singhasurvey.debug.xcconfig */,
+				36FF4104DB875E1A6FF468F0 /* Pods-singhasurvey.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BA339E0D305AF60A7726F178 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				838CC9FAD284F089710CD0F6 /* Pods_singhasurvey.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -88,9 +127,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13F7AFD01D288C7B00AD91B1 /* Build configuration list for PBXNativeTarget "singhasurvey" */;
 			buildPhases = (
+				3C5B82462698811DACF41CDA /* Check Pods Manifest.lock */,
 				13F7AFBA1D288C7B00AD91B1 /* Sources */,
 				13F7AFBB1D288C7B00AD91B1 /* Frameworks */,
 				13F7AFBC1D288C7B00AD91B1 /* Resources */,
+				1A1EA613D8164E3319884A25 /* Embed Pods Frameworks */,
+				A468C4F554840179DD6407FD /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -139,15 +181,65 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				130D108C1D29554800C3D789 /* Podfile in Resources */,
 				13F7AFCC1D288C7B00AD91B1 /* LaunchScreen.storyboard in Resources */,
 				13F7AFC91D288C7B00AD91B1 /* Assets.xcassets in Resources */,
 				13F7AFC71D288C7B00AD91B1 /* Main.storyboard in Resources */,
 				13F7AFD91D28A0C200AD91B1 /* icon_next.png in Resources */,
 				132C01271D28A7BB00152550 /* ic_launcher.png in Resources */,
+				130B02341D2AB91A003299DA /* icon_next_black.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1A1EA613D8164E3319884A25 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-singhasurvey/Pods-singhasurvey-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3C5B82462698811DACF41CDA /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A468C4F554840179DD6407FD /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-singhasurvey/Pods-singhasurvey-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		13F7AFBA1D288C7B00AD91B1 /* Sources */ = {
@@ -155,8 +247,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				13F7AFD41D28922100AD91B1 /* LoginViewController.swift in Sources */,
+				130D108E1D295DAF00C3D789 /* Config.swift in Sources */,
 				13F7AFC41D288C7B00AD91B1 /* ViewController.swift in Sources */,
 				13F7AFC21D288C7B00AD91B1 /* AppDelegate.swift in Sources */,
+				130A4F5E1D2B58AB00D59D06 /* PasscodeViewController.swift in Sources */,
+				130D10901D2A75DC00C3D789 /* SetupPasscodeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +362,7 @@
 		};
 		13F7AFD11D288C7B00AD91B1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2AE6717D68AC643EDA49DE7C /* Pods-singhasurvey.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = singhasurvey/Info.plist;
@@ -278,6 +374,7 @@
 		};
 		13F7AFD21D288C7B00AD91B1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36FF4104DB875E1A6FF468F0 /* Pods-singhasurvey.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = singhasurvey/Info.plist;

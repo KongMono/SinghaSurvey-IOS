@@ -5,7 +5,7 @@
 //  Created by Kong Mono on 7/3/16.
 //  Copyright © 2016 Singha. All rights reserved.
 //
-
+import IQKeyboardManagerSwift
 import UIKit
 
 @UIApplicationMain
@@ -16,6 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        IQKeyboardManager.sharedManager().enable = true
+
         return true
     }
 
