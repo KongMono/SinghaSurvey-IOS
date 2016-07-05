@@ -27,6 +27,17 @@ class SetupPasscodeViewController: UIViewController , UITextFieldDelegate {
         input_new_password.delegate = self
         input_comfirm_new_password.delegate = self
     }
+    
+    
+    override func loadView() {
+        super.loadView()
+        let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        navigationController?.navigationBar.titleTextAttributes = titleDict as? [String : AnyObject]
+        navigationController?.navigationBar.translucent = false
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.barTintColor = UIColor(hexString: AppColor.colorPrimaryDark)
+    }
  
     @IBAction func onclick_done(sender: AnyObject) {
         if(input_new_password.text != input_comfirm_new_password.text){

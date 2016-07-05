@@ -9,6 +9,7 @@ import Alamofire
 import JHSpinner
 import UIKit
 import LMGeocoder
+import DynamicColor
 import SwiftyJSON
 
 class LoginViewController: UIViewController,CLLocationManagerDelegate {
@@ -31,6 +32,16 @@ class LoginViewController: UIViewController,CLLocationManagerDelegate {
         self.locationManager.requestAlwaysAuthorization()
         self.locationManager.startUpdatingLocation()
 
+    }
+    
+    override func loadView() {
+        super.loadView()
+        let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        navigationController?.navigationBar.titleTextAttributes = titleDict as? [String : AnyObject]
+        navigationController?.navigationBar.translucent = false
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.barTintColor = UIColor(hexString: AppColor.colorPrimaryDark)
     }
     
     override func didReceiveMemoryWarning() {
@@ -107,7 +118,7 @@ class LoginViewController: UIViewController,CLLocationManagerDelegate {
             "username": username
         ]
         
-        Alamofire.request(.POST, API.forgot_service,parameters: parameters)
+        Alamofire.request(.POST, API.service_forgot,parameters: parameters)
             .responseJSON { response in
             
             let json = JSON(response.result.value!)
@@ -137,7 +148,7 @@ class LoginViewController: UIViewController,CLLocationManagerDelegate {
         ]
 
         
-        Alamofire.request(.POST, API.login_service, parameters: parameters as? [String : AnyObject])
+        Alamofire.request(.POST, API.service_login, parameters: parameters as? [String : AnyObject])
             .responseJSON { response in
                 
                 var json = JSON(response.result.value!)

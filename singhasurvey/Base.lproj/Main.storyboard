@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ccu-Ck-yMI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="P0p-DS-VUZ">
     <dependencies>
         <deployment identifier="iOS"/>
         <development version="6000" identifier="xcode"/>
@@ -7,7 +7,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Setup Passcode View Controller-->
+        <!--Setup passcode-->
         <scene sceneID="WFh-6g-uBm">
             <objects>
                 <viewController id="GWH-wW-San" customClass="SetupPasscodeViewController" customModule="singhasurvey" customModuleProvider="target" sceneMemberID="viewController">
@@ -49,8 +49,9 @@
                             <constraint firstItem="LNA-u2-xlL" firstAttribute="leading" secondItem="1Ob-cH-nny" secondAttribute="leadingMargin" id="jZY-hp-jZS"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="efx-h0-GTN">
+                    <navigationItem key="navigationItem" title="Setup passcode" id="efx-h0-GTN">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="efi-jF-KuS">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="onclick_done:" destination="GWH-wW-San" id="KAh-NL-ZOI"/>
                             </connections>
@@ -65,12 +66,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WUI-FK-1Ql" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-441" y="-835"/>
+            <point key="canvasLocation" x="-2314" y="-2252"/>
         </scene>
         <!--Setup Passcode-->
         <scene sceneID="MBx-lO-0Vi">
             <objects>
-                <navigationController storyboardIdentifier="SetupPasscode" title="Setup Passcode" id="5wg-Dm-Jfv" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SetupPasscode" title="Setup Passcode" id="5wg-Dm-Jfv" customClass="NavigationController" customModule="singhasurvey" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6mh-Ck-6Y3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -85,132 +86,150 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q8f-ZJ-BQX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-441" y="-1599"/>
+            <point key="canvasLocation" x="-3098" y="-2252"/>
         </scene>
-        <!--Home-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController title="Home" id="BYZ-38-t0r" customClass="ViewController" customModule="singhasurvey" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="View">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="9hO-P5-Axs"/>
-                    <connections>
-                        <segue destination="g54-q0-e1k" kind="presentation" identifier="Login" id="hd4-Oa-HEj"/>
-                        <segue destination="5wg-Dm-Jfv" kind="presentation" identifier="SetupPasscode" id="Wz6-f6-IvY"/>
-                        <segue destination="483-bS-p06" kind="presentation" identifier="Passcode" id="Rzj-RJ-LMl"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="243" y="-2393"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="FqC-1r-wvn">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ccu-Ck-yMI" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wxQ-Zs-qyr">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="8xh-o4-gq7"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HhB-eg-ZjO" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-441" y="-2393"/>
-        </scene>
-        <!--Login View Controller-->
+        <!--Login-->
         <scene sceneID="PIy-zH-rq0">
             <objects>
-                <viewController storyboardIdentifier="Login" id="g54-q0-e1k" customClass="LoginViewController" customModule="singhasurvey" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="g54-q0-e1k" customClass="LoginViewController" customModule="singhasurvey" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="z0C-rb-Ava"/>
                         <viewControllerLayoutGuide type="bottom" id="vf5-Ay-TX0"/>
                     </layoutGuides>
-                    <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFill" id="ni1-rk-pnJ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <view key="view" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFill" id="ni1-rk-pnJ">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="bezel" placeholder="รหัสผ่าน" textAlignment="center" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="6Rn-TJ-dTk">
-                                <rect key="frame" x="173" y="296" width="253" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ชื่อผู้ใช้งาน" textAlignment="center" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="k5x-x3-AKa">
+                                <rect key="frame" x="174" y="140" width="253" height="30"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="ldD-4I-gco"/>
+                                    <constraint firstAttribute="width" constant="253" id="2Yu-OE-XPw"/>
+                                    <constraint firstAttribute="height" constant="30" id="VqP-7Z-VqC"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6S1-wB-awb">
-                                <rect key="frame" x="264" y="445" width="72" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6S1-wB-awb">
+                                <rect key="frame" x="264" y="406" width="72" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="72" id="DCG-9e-XLZ"/>
+                                    <constraint firstAttribute="height" constant="30" id="kR9-4w-xQ6"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="10"/>
                                 <state key="normal" title="กดลืมรหัสผ่าน">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="forgetPasswordTapped:" destination="g54-q0-e1k" eventType="touchUpInside" id="XJR-el-oFw"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WdC-zB-Qoq">
-                                <rect key="frame" x="274" y="376" width="53" height="52"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="รหัสผ่าน" textAlignment="center" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="6Rn-TJ-dTk">
+                                <rect key="frame" x="173" y="178" width="253" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="52" id="BaL-eN-ono"/>
-                                    <constraint firstAttribute="width" constant="53" id="igm-Ve-9kU"/>
+                                    <constraint firstAttribute="height" constant="30" id="cwL-XK-WeT"/>
+                                    <constraint firstAttribute="width" constant="253" id="hif-ua-U09"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WdC-zB-Qoq">
+                                <rect key="frame" x="174" y="242" width="253" height="52"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" image="icon_next.png"/>
+                                <state key="normal" title="เข้าสู่ระบบ">
+                                    <color key="titleColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="loginTapped:" destination="g54-q0-e1k" eventType="touchUpInside" id="Mff-hz-8ic"/>
                                 </connections>
                             </button>
-                            <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_launcher.png" translatesAutoresizingMaskIntoConstraints="NO" id="eZr-eV-IU5">
-                                <rect key="frame" x="173" y="65" width="253" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="253" id="Fem-LN-4gd"/>
-                                    <constraint firstAttribute="height" constant="100" id="eB8-0b-j92"/>
-                                </constraints>
-                            </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="bezel" placeholder="ชื่อผู้ใช้งาน" textAlignment="center" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="k5x-x3-AKa">
-                                <rect key="frame" x="173" y="233" width="253" height="30"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
-                            </textField>
                         </subviews>
-                        <color key="backgroundColor" red="0.1803921568627451" green="0.21568627450980393" blue="0.27843137254901962" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="6Rn-TJ-dTk" firstAttribute="top" secondItem="ni1-rk-pnJ" secondAttribute="top" constant="296" id="1Uw-qR-IWr"/>
-                            <constraint firstItem="eZr-eV-IU5" firstAttribute="centerX" secondItem="6S1-wB-awb" secondAttribute="centerX" id="Ees-7k-ISp"/>
-                            <constraint firstItem="eZr-eV-IU5" firstAttribute="top" secondItem="z0C-rb-Ava" secondAttribute="bottom" constant="45" id="GpZ-hE-LEY"/>
-                            <constraint firstItem="eZr-eV-IU5" firstAttribute="trailing" secondItem="6Rn-TJ-dTk" secondAttribute="trailing" id="O5H-M4-HqK"/>
-                            <constraint firstItem="WdC-zB-Qoq" firstAttribute="centerX" secondItem="6S1-wB-awb" secondAttribute="centerX" id="P4j-5h-2VA"/>
-                            <constraint firstItem="6Rn-TJ-dTk" firstAttribute="top" secondItem="k5x-x3-AKa" secondAttribute="bottom" constant="33" id="Rwb-Sx-U4J"/>
-                            <constraint firstItem="k5x-x3-AKa" firstAttribute="top" secondItem="eZr-eV-IU5" secondAttribute="bottom" constant="68" id="aWr-St-oXI"/>
-                            <constraint firstItem="eZr-eV-IU5" firstAttribute="trailing" secondItem="k5x-x3-AKa" secondAttribute="trailing" id="erF-En-YkN"/>
-                            <constraint firstItem="WdC-zB-Qoq" firstAttribute="top" secondItem="6Rn-TJ-dTk" secondAttribute="bottom" constant="50" id="js3-oO-o9y"/>
-                            <constraint firstItem="eZr-eV-IU5" firstAttribute="leading" secondItem="6Rn-TJ-dTk" secondAttribute="leading" id="kF0-Ro-6JP"/>
-                            <constraint firstItem="eZr-eV-IU5" firstAttribute="centerX" secondItem="ni1-rk-pnJ" secondAttribute="centerX" id="tgE-a7-0Kk"/>
-                            <constraint firstItem="6S1-wB-awb" firstAttribute="top" secondItem="WdC-zB-Qoq" secondAttribute="bottom" constant="17" id="uxn-9T-Lqn"/>
-                            <constraint firstItem="eZr-eV-IU5" firstAttribute="leading" secondItem="k5x-x3-AKa" secondAttribute="leading" id="y5D-BB-PhI"/>
+                            <constraint firstItem="WdC-zB-Qoq" firstAttribute="top" secondItem="6Rn-TJ-dTk" secondAttribute="bottom" constant="34" id="9D0-E8-PcJ"/>
+                            <constraint firstItem="6Rn-TJ-dTk" firstAttribute="centerX" secondItem="6S1-wB-awb" secondAttribute="centerX" id="Hdl-fH-OK6"/>
+                            <constraint firstItem="WdC-zB-Qoq" firstAttribute="centerY" secondItem="ni1-rk-pnJ" secondAttribute="centerY" id="O4d-W8-rSI"/>
+                            <constraint firstItem="k5x-x3-AKa" firstAttribute="trailing" secondItem="WdC-zB-Qoq" secondAttribute="trailing" id="VBd-F6-4WD"/>
+                            <constraint firstItem="k5x-x3-AKa" firstAttribute="leading" secondItem="WdC-zB-Qoq" secondAttribute="leading" id="VEq-76-RbK"/>
+                            <constraint firstItem="k5x-x3-AKa" firstAttribute="top" secondItem="z0C-rb-Ava" secondAttribute="bottom" constant="140" id="bWU-gn-zXg"/>
+                            <constraint firstItem="vf5-Ay-TX0" firstAttribute="top" secondItem="6S1-wB-awb" secondAttribute="bottom" constant="100" id="dv5-mh-xQp"/>
+                            <constraint firstItem="WdC-zB-Qoq" firstAttribute="centerX" secondItem="6S1-wB-awb" secondAttribute="centerX" id="gAw-mb-EVa"/>
+                            <constraint firstItem="k5x-x3-AKa" firstAttribute="centerX" secondItem="ni1-rk-pnJ" secondAttribute="centerX" id="qgd-Aj-ZNK"/>
+                            <constraint firstItem="6Rn-TJ-dTk" firstAttribute="top" secondItem="k5x-x3-AKa" secondAttribute="bottom" constant="8" symbolic="YES" id="yqh-Po-4SR"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" title="Login" id="hdt-py-Rh1"/>
                     <connections>
                         <outlet property="mPassword" destination="6Rn-TJ-dTk" id="gfC-2u-4Dy"/>
                         <outlet property="mUsername" destination="k5x-x3-AKa" id="gcr-lg-yia"/>
+                        <segue destination="5wg-Dm-Jfv" kind="presentation" identifier="SetupPasscode" id="7Sl-Ac-Xgm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oAh-84-qBc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="992" y="-2393"/>
+            <point key="canvasLocation" x="272" y="-3437"/>
+        </scene>
+        <!--เข้าเยี่ยมและบันทึกยอดขาย-->
+        <scene sceneID="4Kz-Lj-3zQ">
+            <objects>
+                <viewController id="Fid-EC-shm" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="99x-Jo-rP6"/>
+                        <viewControllerLayoutGuide type="bottom" id="4K7-kK-PWp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2AQ-3a-Fw1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="เข้าเยี่ยมและบันทึกยอดขาย" id="2td-hx-z0j"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1pJ-hb-abP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-132" y="-1483"/>
+        </scene>
+        <!--ข้อมูลร้านค้า-->
+        <scene sceneID="qj5-JA-o82">
+            <objects>
+                <viewController id="SPI-Ep-h22" customClass="ShopInfoViewController" customModule="singhasurvey" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Bdf-tg-lta"/>
+                        <viewControllerLayoutGuide type="bottom" id="P5c-ZT-JoK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Mk2-XX-o1A" customClass="Shop">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="ข้อมูลร้านค้า" id="dpF-iN-JxB"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d7P-sk-tXo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-865" y="-1492"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="6jM-uM-frO">
+            <objects>
+                <tabBarController storyboardIdentifier="SinghaStoryboard" title="Home" id="P0p-DS-VUZ" customClass="ViewController" customModule="singhasurvey" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="gmq-MT-hCD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="M9C-En-nMT" kind="relationship" relationship="viewControllers" id="git-kM-TQs"/>
+                        <segue destination="cP9-0i-tJx" kind="relationship" relationship="viewControllers" id="4jO-gK-dpl"/>
+                        <segue destination="RmR-Ao-PWp" kind="relationship" relationship="viewControllers" id="NMa-aU-e8N"/>
+                        <segue destination="483-bS-p06" kind="presentation" identifier="Passcode" id="CUS-AO-o1M"/>
+                        <segue destination="5wg-Dm-Jfv" kind="presentation" identifier="SetupPasscode" id="aOU-wp-HdH"/>
+                        <segue destination="5wd-Cb-Ezb" kind="presentation" identifier="Login" id="1jR-f6-HUX"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MYZ-ul-ASU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1236" y="-3437"/>
         </scene>
         <!--Passcode View Controller-->
         <scene sceneID="0xb-6I-1DE">
@@ -296,14 +315,105 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mgy-U0-fRc" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="243" y="-1599"/>
+            <point key="canvasLocation" x="-1618" y="-2252"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="KWA-OX-pLS">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="M9C-En-nMT" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item 1" id="b5l-2c-eKC"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eqr-ym-mPt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="SPI-Ep-h22" kind="relationship" relationship="rootViewController" id="eq0-OM-Ymd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Zv-nG-jIN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-865" y="-2252"/>
+        </scene>
+        <!--Item 2-->
+        <scene sceneID="wkg-vi-6RP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cP9-0i-tJx" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item 2" id="sZN-BH-H3r"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="b1t-W8-K8k">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Fid-EC-shm" kind="relationship" relationship="rootViewController" id="kfJ-f5-gW2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="78b-2q-qGz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-132" y="-2252"/>
+        </scene>
+        <!--Item 3-->
+        <scene sceneID="IYx-wS-9R8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RmR-Ao-PWp" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item 3" id="4CE-9s-g5N"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WiW-WS-WpC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="a84-zh-0Je" kind="relationship" relationship="rootViewController" id="kcy-E0-SYF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mtR-G7-vSm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="610" y="-2252"/>
+        </scene>
+        <!--บริหารการเข้าเยี่ยมร้านค้า-->
+        <scene sceneID="Jts-NQ-Jsy">
+            <objects>
+                <viewController id="a84-zh-0Je" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yvt-tm-Q2d"/>
+                        <viewControllerLayoutGuide type="bottom" id="Nwp-IH-XE0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7oL-ad-d5Z">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="บริหารการเข้าเยี่ยมร้านค้า" id="5U2-sz-USW"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nJq-As-F6s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="610" y="-1492"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hot-dK-DSz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5wd-Cb-Ezb" customClass="NavigationController" customModule="singhasurvey" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iVR-wu-WZA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="g54-q0-e1k" kind="relationship" relationship="rootViewController" id="b4C-kt-Lyy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j3w-08-0j5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-476" y="-3437"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="ic_launcher.png" width="192" height="192"/>
-        <image name="icon_next.png" width="100" height="100"/>
-    </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="7Sl-Ac-Xgm"/>
         <segue reference="dfC-Po-rmm"/>
     </inferredMetricsTieBreakers>
 </document>

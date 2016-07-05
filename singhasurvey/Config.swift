@@ -16,14 +16,22 @@ struct Config {
 
 struct API {
     static let BASE_URL = "http://128.199.72.29/index.php/";
-    static let login_service = BASE_URL + "v1/auth/login/format/json"
-    static let forgot_service = BASE_URL + "v1/auth/forgot/format/json"
+    static let service_login = BASE_URL + "v1/auth/login/format/json"
+    static let service_forgot = BASE_URL + "v1/auth/forgot/format/json"
+    static let service_customers_list = BASE_URL + "v1/customers/list/format/json"
+    
+//    
+//    @GET("v1/customers/list/format/json")
+//    Call<CustomersEntity> getCustomersList(@Query("user_id") String user_id, @Query("offset") Integer offset, @Query("limit") Integer limit);
+
+    
+    
 }
 
-struct BeerismColor {
-    static let colorPrimary = "#3F51B5"
-    static let colorPrimaryDark = "#ff9800"
-    static let colorAccent = "#FF4081"
+struct AppColor {
+    static let colorPrimary = "#455A64"
+    static let colorPrimaryDark = "#263238"
+    static let colorAccent = "#fe8200"
 }
 
 

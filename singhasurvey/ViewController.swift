@@ -8,7 +8,7 @@
 import SwiftyJSON
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UITabBarController {
 
     var defaults = NSUserDefaults.standardUserDefaults()
 
@@ -17,6 +17,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         defaults = NSUserDefaults.standardUserDefaults()
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
         let userData = defaults.valueForKey("user_data")
         
         if userData == nil {
@@ -24,24 +31,27 @@ class ViewController: UIViewController {
         } else {
             let data  = JSON.parse(userData as! String)
             print(data)
+            
+            let passcode = defaults.valueForKey("passcode")
+            
+            if passcode == nil {
+                self.performSegueWithIdentifier("SetupPasscode", sender: self)
+            } else {
+                if (!Config.Logged) {
+                    self.performSegueWithIdentifier("Passcode", sender: self)
+                }
+            }
         }
-    }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    }
+    
+    
+    override func viewWillDisappear(animated: Bool) {
+        
     }
     
     override func viewWillAppear(animated: Bool) {
         
-        let passcode = defaults.valueForKey("passcode")
-        
-        if passcode == nil {
-            self.performSegueWithIdentifier("SetupPasscode", sender: self)
-        } else {
-            if (!Config.Logged) {
-                 self.performSegueWithIdentifier("Passcode", sender: self)
-            }
-        }
     }
 }
 

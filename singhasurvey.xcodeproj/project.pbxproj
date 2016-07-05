@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		130A4F5E1D2B58AB00D59D06 /* PasscodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130A4F5D1D2B58AB00D59D06 /* PasscodeViewController.swift */; };
+		130A4F701D2BB68700D59D06 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130A4F6F1D2BB68700D59D06 /* NavigationController.swift */; };
 		130B02341D2AB91A003299DA /* icon_next_black.png in Resources */ = {isa = PBXBuildFile; fileRef = 130B02331D2AB91A003299DA /* icon_next_black.png */; };
 		130D108C1D29554800C3D789 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 130D108B1D29554800C3D789 /* Podfile */; };
 		130D108E1D295DAF00C3D789 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130D108D1D295DAF00C3D789 /* Config.swift */; };
 		130D10901D2A75DC00C3D789 /* SetupPasscodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130D108F1D2A75DC00C3D789 /* SetupPasscodeViewController.swift */; };
+		13275A2E1D2BBC6300E6E1C7 /* ShopInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13275A2D1D2BBC6300E6E1C7 /* ShopInfoViewController.swift */; };
 		132C01271D28A7BB00152550 /* ic_launcher.png in Resources */ = {isa = PBXBuildFile; fileRef = 132C01261D28A7BB00152550 /* ic_launcher.png */; };
 		13F7AFC21D288C7B00AD91B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F7AFC11D288C7B00AD91B1 /* AppDelegate.swift */; };
 		13F7AFC41D288C7B00AD91B1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F7AFC31D288C7B00AD91B1 /* ViewController.swift */; };
@@ -25,10 +27,12 @@
 
 /* Begin PBXFileReference section */
 		130A4F5D1D2B58AB00D59D06 /* PasscodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasscodeViewController.swift; sourceTree = "<group>"; };
+		130A4F6F1D2BB68700D59D06 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		130B02331D2AB91A003299DA /* icon_next_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_next_black.png; sourceTree = "<group>"; };
 		130D108B1D29554800C3D789 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		130D108D1D295DAF00C3D789 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		130D108F1D2A75DC00C3D789 /* SetupPasscodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupPasscodeViewController.swift; sourceTree = "<group>"; };
+		13275A2D1D2BBC6300E6E1C7 /* ShopInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopInfoViewController.swift; sourceTree = "<group>"; };
 		132C01261D28A7BB00152550 /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
 		13F7AFBE1D288C7B00AD91B1 /* singhasurvey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = singhasurvey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13F7AFC11D288C7B00AD91B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -85,10 +89,12 @@
 				13F7AFD31D28922100AD91B1 /* LoginViewController.swift */,
 				130D108F1D2A75DC00C3D789 /* SetupPasscodeViewController.swift */,
 				130A4F5D1D2B58AB00D59D06 /* PasscodeViewController.swift */,
+				13275A2D1D2BBC6300E6E1C7 /* ShopInfoViewController.swift */,
 				13F7AFC81D288C7B00AD91B1 /* Assets.xcassets */,
 				13F7AFCA1D288C7B00AD91B1 /* LaunchScreen.storyboard */,
 				13F7AFCD1D288C7B00AD91B1 /* Info.plist */,
 				130D108D1D295DAF00C3D789 /* Config.swift */,
+				130A4F6F1D2BB68700D59D06 /* NavigationController.swift */,
 			);
 			path = singhasurvey;
 			sourceTree = "<group>";
@@ -250,7 +256,9 @@
 				130D108E1D295DAF00C3D789 /* Config.swift in Sources */,
 				13F7AFC41D288C7B00AD91B1 /* ViewController.swift in Sources */,
 				13F7AFC21D288C7B00AD91B1 /* AppDelegate.swift in Sources */,
+				13275A2E1D2BBC6300E6E1C7 /* ShopInfoViewController.swift in Sources */,
 				130A4F5E1D2B58AB00D59D06 /* PasscodeViewController.swift in Sources */,
+				130A4F701D2BB68700D59D06 /* NavigationController.swift in Sources */,
 				130D10901D2A75DC00C3D789 /* SetupPasscodeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
