@@ -1,25 +1,26 @@
 //
-//  ShopInfoViewController.swift
+//  SurveyViewController.swift
 //  singhasurvey
 //
 //  Created by Kong Mono on 7/5/16.
 //  Copyright © 2016 Singha. All rights reserved.
 //
+
 import PullToRefreshSwift
 import UIKit
 import Alamofire
 import JHSpinner
 import SwiftyJSON
-import AlamofireObjectMapper
 
-class ShopInfoViewController: UIViewController , UITableViewDataSource, UITableViewDelegate  {
+
+class SurveyViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     
     var defaults = NSUserDefaults.standardUserDefaults()
     var userData:JSON = []
     var offset = "0"
     var limit = "20"
-    var mData = [CustomersListData]()
-    
+    var mData = [CustomersVisitListData]()
+
     @IBOutlet weak var mTableView: UITableView!
     
     override func viewDidLoad() {
@@ -27,7 +28,7 @@ class ShopInfoViewController: UIViewController , UITableViewDataSource, UITableV
         
         self.mTableView.dataSource = self
         self.mTableView.delegate = self
-
+        
         let value = defaults.valueForKey("user_data")
         
         let options = PullToRefreshOption()
@@ -56,13 +57,13 @@ class ShopInfoViewController: UIViewController , UITableViewDataSource, UITableV
             self.mTableView.reloadData()
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
         self.mTableView.fixedPullToRefreshViewForDidScroll()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
     
     override func loadView() {
@@ -75,27 +76,28 @@ class ShopInfoViewController: UIViewController , UITableViewDataSource, UITableV
         navigationController?.navigationBar.barTintColor = UIColor(hexString: AppColor.colorPrimaryDark)
     }
     
-    func loadData(user_id: String){
+    func loadData(user_id: String) {
         let spinner = JHSpinnerView.showDeterminiteSpinnerOnView(self.view)
         spinner.progress = 0.0
         view.addSubview(spinner)
         
-        var url = API.service_customers_list;
+        var url = API.visit_customers_list;
         
         url = url.replace(":user_id", withString: user_id)
         url = url.replace(":offset", withString: offset)
         url = url.replace(":limit", withString: limit)
         
         
-        Alamofire.request(.GET, url).responseObject() { (response: Response<CustomersList, NSError>) in
+        Alamofire.request(.GET, url).responseObject() { (response: Response<CustomersVisitList, NSError>) in
             
             let dataResponse = response.result.value
-            self.mData = (dataResponse?.data)! as [CustomersListData]
+            self.mData = (dataResponse?.data)! as [CustomersVisitListData]
             self.mTableView.reloadData()
-
+            
             spinner.dismiss()
-
+            
         }
+    
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -107,26 +109,18 @@ class ShopInfoViewController: UIViewController , UITableViewDataSource, UITableV
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("ShopInfoCell") as! CustomShopInfoViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("CustomVisitCell") as! CustomerVisitViewCell
         
         let dict = self.mData[indexPath.row]
-        cell.mName.text = dict.name
-        cell.mTier.text = dict.tier
-        cell.mCount_survey.text = String(dict.count_survey!)
+        cell.mCustomerName.text = dict.customer_name
+        cell.mActivityName.text = dict.activity_name
+        cell.mCreatedDate.text = dict.created_date
+        cell.mVenueType.text = dict.venue_type
         
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-    }
-
-}
-
-extension String
-{
-    func replace(target: String, withString: String) -> String
-    {
-        return self.stringByReplacingOccurrencesOfString(target, withString: withString, options: NSStringCompareOptions.LiteralSearch, range: nil)
     }
 }

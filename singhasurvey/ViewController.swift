@@ -15,8 +15,6 @@ class ViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        defaults = NSUserDefaults.standardUserDefaults()
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,15 +41,6 @@ class ViewController: UITabBarController {
             }
         }
 
-    }
-    
-    
-    override func viewWillDisappear(animated: Bool) {
-        
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        
     }
 }
 

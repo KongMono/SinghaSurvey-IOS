@@ -18,14 +18,15 @@ struct API {
     static let BASE_URL = "http://128.199.72.29/index.php/";
     static let service_login = BASE_URL + "v1/auth/login/format/json"
     static let service_forgot = BASE_URL + "v1/auth/forgot/format/json"
-    static let service_customers_list = BASE_URL + "v1/customers/list/format/json"
+    static let service_customers_list = BASE_URL + "v1/customers/list/user_id/:user_id/offset/:offset/limit/:limit/format/json"
     
-//    
-//    @GET("v1/customers/list/format/json")
-//    Call<CustomersEntity> getCustomersList(@Query("user_id") String user_id, @Query("offset") Integer offset, @Query("limit") Integer limit);
+    /////////
+    
+    static let visit_customers_list = BASE_URL + "v1/visit/list/user_id/:user_id/offset/:offset/limit/:limit/format/json"
+    /////////
+    
+    
 
-    
-    
 }
 
 struct AppColor {

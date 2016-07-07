@@ -7,11 +7,15 @@ pod 'GoogleMaps'
 pod 'DynamicColor', '~> 2.0.1'
 pod 'LMGeocoder', '1.0.3'
 pod 'MapleBacon'
+pod 'PullToRefreshSwift'
 pod 'IQKeyboardManagerSwift'
 pod 'GoogleMaterialIconFont'
 pod 'JHSpinner'
 pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
 pod 'SwiftDate'
 pod 'PasscodeField', '~> 0.1.1'
+pod 'SwiftForms'
+pod 'AlamofireObjectMapper', '~> 3.0'
+
 end
 
